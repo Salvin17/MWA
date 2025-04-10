@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Championship - College Basketball Event</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f0f8ff;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #007f5f;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            text-align: center;
+            margin: 0;
+        }
+
+        header p {
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        nav ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        section {
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h2 {
+            color: #007f5f;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        table th {
+            background: #007f5f;
+            color: #fff;
+        }
+
+        form {
+            width: 60%;
+            margin: auto;
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        form button {
+            background: #007f5f;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #005f45;
+        }
+
+        footer {
+            background: #007f5f;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .team-info {
+            border: 1px solid #ddd;
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #e6ffe6;
+        }
+
+        .team-info h3 {
+            margin: 0;
+            color: #007f5f;
+        }
+
+        .team-info p {
+            margin: 5px 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .delete-button {
+            background: #e60000;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .delete-button:hover {
+            background: #b30000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to the Basketball Championship</h1>
+            <p>The Ultimate College Basketball Tournament</p>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#teams">Teams</a></li>
+                    <li><a href="#register">Register</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Basketball Championship</h2>
+            <p>Join us for the most exciting college basketball event of the year. Teams from all over will battle for the title of Basketball Champion!</p>
+        </div>
+    </section>
+
+    <section id="schedule">
+        <div class="container">
+            <h2>Event Schedule</h2>
+            <table id="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Match</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="teams">
+        <div class="container">
+            <h2>Participating Teams</h2>
+            <ul id="team-list">
+            </ul>
+            <div id="team-info" class="team-info hidden">
+                <h3>Team Details</h3>
+                <p id="team-details"></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="register">
+        <div class="container">
+            <h2>Register Your Team</h2>
+            <form id="registration-form">
+                <label for="team-name">Team Name:</label>
+                <input type="text" id="team-name" name="team-name" required>
+
+                <label for="department">Department:</label>
+                <input type="text" id="department" name="department" required>
+
+                <label for="player-list">List of Players (Name, College ID, Class Year):</label>
+                <textarea id="player-list" name="player-list" placeholder="Enter each player's details on a new line." required></textarea>
+
+                <label for="college-name">College Name:</label>
+                <input type="text" id="college-name" name="college-name" required>
+
+                <label for="captain-name">Captain's Name:</label>
+                <input type="text" id="captain-name" name="captain-name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <button type="submit">Register</button>
+                <p id="form-status" class="success"></p>
+            </form>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>For any queries or assistance, feel free to reach out to us:</p>
+            <ul>
+                <li>Email: <a href="mailto:basketballchampionship@college.com">basketballchampionship@college.com</a></li>
+                <li>Phone: +123-456-7890</li>
+                <li>Address: College Sports Ground, Main Campus</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Basketball Championship Event. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const teams = [];
+
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const teamName = document.getElementById('team-name').value;
+            const department = document.getElementById('department').value;
+            const playerList = document.getElementById('player-list').value;
+            const collegeName = document.getElementById('college-name').value;
+            const captainName = document.getElementById('captain-name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+
+            const status = document.getElementById('form-status');
+            const teamList = document.getElementById('team-list');
+            const scheduleTable = document.getElementById('schedule-table').querySelector('tbody');
+
+            // Check if the team already exists
+            const existingTeams = teams.map(team => team.name);
+            if (!existingTeams.includes(teamName)) {
+                // Save the team details
+                const teamData = {
+                    name: teamName,
+                    department,
+                    players: playerList,
+                    college: collegeName,
+                    captain: captainName,
+                    email,
+                    phone
+                };
+                teams.push(teamData);
+
+                // Append team name to Participating Teams
+                const newTeamItem = document.createElement('li');
+                newTeamItem.innerHTML = 
+                    `${teamName} 
+                    <button class="delete-button" onclick="deleteTeam('${teamName}')">Delete</button>`;
+                newTeamItem.addEventListener('click', (e) => {
+                    if (!e.target.classList.contains('delete-button')) {
+                        const teamInfo = document.getElementById('team-info');
+                        const teamDetails = document.getElementById('team-details');
+                        teamDetails.innerHTML = 
+                            `<strong>Department:</strong> ${teamData.department}<br>
+                            <strong>Players:</strong><br> ${teamData.players.replace(/\n/g, '<br>')}<br>
+                            <strong>College:</strong> ${teamData.college}<br>
+                            <strong>Captain:</strong> ${teamData.captain}<br>
+                            <strong>Email:</strong> ${teamData.email}<br>
+                            <strong>Phone:</strong> ${teamData.phone}<br>`;
+                        teamInfo.classList.remove('hidden');
+                    }
+                });
+                teamList.appendChild(newTeamItem);
+
+                // Schedule match if there is an opponent
+                if (teams.length > 1) {
+                    const previousTeam = teams[teams.length - 2].name;
+
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = 
+                        `<td>${new Date().toLocaleDateString()}</td>
+                        <td>${new Date().toLocaleTimeString()}</td>
+                        <td>${previousTeam} vs ${teamName}</td>`;
+                    scheduleTable.appendChild(newRow);
+                }
+
+                status.textContent = 'Team registered successfully!';
+                status.classList.remove('hidden');
+
+                setTimeout(() => {
+                    status.textContent = '';
+                }, 3000);
+
+                document.getElementById('registration-form').reset();
+            } else {
+                status.textContent = 'Team name already exists!';
+                status.classList.remove('hidden');
+
+                setTimeout(() => {
+                    status.textContent = '';
+                }, 3000);
+            }
+        });
+
+        function deleteTeam(teamName) {
+            const index = teams.findIndex(team => team.name === teamName);
+            if (index > -1) {
+                teams.splice(index, 1);
+
+                const teamList = document.getElementById('team-list');
+                const teamItems = Array.from(teamList.children);
+                teamItems.forEach(item => {
+                    if (item.textContent.includes(teamName)) {
+                        teamList.removeChild(item);
+                    }
+                });
+
+                const scheduleTable = document.getElementById('schedule-table').querySelector('tbody');
+                const rows = Array.from(scheduleTable.children);
+                rows.forEach(row => {
+                    if (row.textContent.includes(teamName)) {
+                        scheduleTable.removeChild(row);
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

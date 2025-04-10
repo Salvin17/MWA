@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghandharva Sports Event</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1d3557, #457b9d);
+            color: #f1faee;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background: #1d3557;
+            color: #f1faee;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            padding: 20px;
+        }
+
+        .card {
+            background: #f1faee;
+            color: #1d3557;
+            width: 250px;
+            height: 300px;
+            margin: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h2 {
+            margin: 10px 0 0;
+            font-size: 1.8em;
+        }
+
+        .card p {
+            margin: 5px 0 10px;
+            font-size: 1em;
+            color: #457b9d;
+        }
+
+        footer {
+            text-align: center;
+            background: #1d3557;
+            color: #f1faee;
+            padding: 15px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Gandharva Sports Event</h1>
+        <p>Explore and register for your favorite sports below</p>
+    </header>
+
+    <div class="container">
+        <a href="football.html">
+            <div class="card">
+                <img src="football.png" alt="Football">
+                <h2>Football</h2>
+                <p>Register Now</p>
+            </div>
+        </a>
+        <a href="cricket.html">
+            <div class="card">
+                <img src="cricket.png" alt="Cricket">
+                <h2>Cricket</h2>
+                <p>Register Now</p>
+            </div>
+        </a>
+        <a href="basketball.html">
+            <div class="card">
+                <img src="basketball.png" alt="Basketball">
+                <h2>Basketball</h2>
+                <p>Register Now</p>
+            </div>
+        </a>
+        <a href="kho-kho.html">
+            <div class="card">
+                <img src="kho-kho.png" alt="Kho-Kho">
+                <h2>Kho-Kho</h2>
+                <p>Register Now</p>
+            </div>
+        </a>
+        <a href="kabaddi.html">
+            <div class="card">
+                <img src="kabaddi.png" alt="Kabaddi">
+                <h2>Kabaddi</h2>
+                <p>Register Now</p>
+            </div>
+        </a>
+        <a href="volleyball.html">
+            <div class="card">
+                <img src="volleyball.png" alt="volleyball">
+                <h2>Volleyball</h2>
+                <p>Register Now</p>
+            </div>
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Ghandharva Sports Event. All rights reserved.</p>
+    </footer>
+</body>
+</html>
