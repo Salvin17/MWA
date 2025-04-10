@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="attendanceApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Attendance</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <style>
+    .Present { color: green; }
+    .Absent { color: red; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+    button {
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div ng-controller="AttendanceController" class="attendance-container">
+    <h2>Student Attendance</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="student in students">
+          <td>{{ student.name }}</td>
+          <td ng-class="student.status">{{ student.status }}</td>
+          <td>
+            <button ng-click="markPresent(student)">Mark Present</button>
+            <button ng-click="markAbsent(student)">Mark Absent</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // AngularJS Application
+    var app = angular.module('attendanceApp', []);
+
+    // Controller
+    app.controller('AttendanceController', function($scope) {
+      // Initial student data
+      $scope.students = [
+        { name: 'Sarthak Gaikwad', status: 'Absent' },
+        { name: 'Mohit Khokle', status: 'Absent' },
+        { name: 'Salvin Padvi', status: 'Absent' }
+      ];
+
+      // Function to mark a student as present
+      $scope.markPresent = function(student) {
+        student.status = 'Present';
+      };
+
+      // Function to mark a student as absent
+      $scope.markAbsent = function(student) {
+        student.status = 'Absent';
+      };
+    });
+  </script>
+</body>
+</html>
